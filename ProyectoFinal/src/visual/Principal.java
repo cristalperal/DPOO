@@ -40,7 +40,7 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
-		setTitle("<Nombre empresa>");
+		setTitle("JoseandoAndo");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/imagenes/Logo.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1084, 785);
@@ -62,9 +62,9 @@ public class Principal extends JFrame {
 		contentPane.add(pnlMenu);
 		pnlMenu.setLayout(null);
 		
-		JLabel lblDerechos = new JLabel("\u00A9 2025 Nombre. Todos los derechos reservados.");
+		JLabel lblDerechos = new JLabel("\u00A9 2025 JoseandoAndo. Todos los derechos reservados.");
 		lblDerechos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		lblDerechos.setBounds(97, 901, 311, 16);
+		lblDerechos.setBounds(73, 901, 339, 16);
 		pnlMenu.add(lblDerechos);
 		
 		JLabel imgFondo = new JLabel("");
