@@ -15,6 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.border.TitledBorder;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
 
 public class RegistroEmpresa extends JDialog {
 
@@ -50,13 +53,13 @@ public class RegistroEmpresa extends JDialog {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(Color.WHITE);
+		contentPanel.setBackground(new Color(0, 51, 102));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JPanel panel = new JPanel();
-			panel.setBorder(new TitledBorder(null, "Informaci\u00F3n General", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n General", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			panel.setBackground(Color.WHITE);
 			contentPanel.add(panel, BorderLayout.CENTER);
 			panel.setLayout(null);
@@ -88,16 +91,16 @@ public class RegistroEmpresa extends JDialog {
 			panel.add(cbxTipo);
 			
 			JLabel lblDireccion = new JLabel("Direcci\u00F3n:");
-			lblDireccion.setBounds(643, 150, 75, 16);
+			lblDireccion.setBounds(636, 153, 75, 16);
 			panel.add(lblDireccion);
 			
 			txtDireccion = new JTextField();
 			txtDireccion.setColumns(10);
-			txtDireccion.setBounds(707, 147, 174, 22);
+			txtDireccion.setBounds(707, 150, 174, 22);
 			panel.add(txtDireccion);
 			
 			JLabel lblPais = new JLabel("Pa\u00EDs:");
-			lblPais.setBounds(14, 150, 75, 16);
+			lblPais.setBounds(14, 153, 75, 16);
 			panel.add(lblPais);
 			
 			txtPais = new JTextField();
@@ -106,7 +109,7 @@ public class RegistroEmpresa extends JDialog {
 			panel.add(txtPais);
 			
 			JLabel lblProvincia = new JLabel("Provincia:");
-			lblProvincia.setBounds(329, 153, 56, 16);
+			lblProvincia.setBounds(322, 153, 56, 16);
 			panel.add(lblProvincia);
 			
 			txtProvincia = new JTextField();
@@ -135,7 +138,7 @@ public class RegistroEmpresa extends JDialog {
 			pnlContactos.add(lblTelefono);
 			
 			txtTelefono = new JTextField();
-			txtTelefono.setBounds(392, 30, 174, 22);
+			txtTelefono.setBounds(401, 27, 174, 22);
 			pnlContactos.add(txtTelefono);
 			txtTelefono.setColumns(10);
 		}
@@ -146,6 +149,8 @@ public class RegistroEmpresa extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton btnRegistrar = new JButton("Registrar");
+				btnRegistrar.setBackground(new Color(255, 255, 255));
+				btnRegistrar.setIcon(new ImageIcon(RegistroEmpresa.class.getResource("/imagenes/icons8-save-20.png")));
 				btnRegistrar.setFocusPainted(false);
 				btnRegistrar.setFocusTraversalKeysEnabled(false);
 				btnRegistrar.addActionListener(new ActionListener() {
@@ -158,6 +163,8 @@ public class RegistroEmpresa extends JDialog {
 			}
 			{
 				JButton btnCancelar = new JButton("Cancelar");
+				btnCancelar.setBackground(new Color(255, 255, 255));
+				btnCancelar.setIcon(new ImageIcon(RegistroEmpresa.class.getResource("/imagenes/icons8-cancel-15.png")));
 				btnCancelar.setFocusPainted(false);
 				btnCancelar.setFocusTraversalKeysEnabled(false);
 				btnCancelar.addActionListener(new ActionListener() {
