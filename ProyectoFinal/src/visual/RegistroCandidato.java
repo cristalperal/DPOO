@@ -249,58 +249,58 @@ public class RegistroCandidato extends JDialog {
 			comboBox_2.setBounds(684, 39, 174, 26);
 			pnlPostulacion.add(comboBox_2);
 			
-			JLabel lblVehiculoPropio = new JLabel("Veh\u00EDculo Propio?");
+			JLabel lblVehiculoPropio = new JLabel("\u00BFVeh\u00EDculo Propio?");
 			lblVehiculoPropio.setBounds(15, 95, 117, 20);
 			pnlPostulacion.add(lblVehiculoPropio);
 			{
 				JRadioButton radioButton = new JRadioButton("Si");
 				radioButton.setBackground(new Color(255, 255, 255));
-				radioButton.setBounds(116, 90, 45, 29);
+				radioButton.setBounds(128, 90, 45, 29);
 				pnlPostulacion.add(radioButton);
 			}
 			{
 				JRadioButton radioButton = new JRadioButton("No");
 				radioButton.setBackground(new Color(255, 255, 255));
 				radioButton.setSelected(true);
-				radioButton.setBounds(156, 91, 54, 29);
+				radioButton.setBounds(174, 91, 54, 29);
 				pnlPostulacion.add(radioButton);
 			}
 			{
-				JLabel lblPuedeMudarse = new JLabel("Puede Mudarse?");
+				JLabel lblPuedeMudarse = new JLabel("\u00BFPuede Mudarse?");
 				lblPuedeMudarse.setBounds(15, 132, 117, 20);
 				pnlPostulacion.add(lblPuedeMudarse);
 			}
 			{
 				JRadioButton radioButton = new JRadioButton("Si");
 				radioButton.setBackground(Color.WHITE);
-				radioButton.setBounds(116, 127, 45, 29);
+				radioButton.setBounds(128, 127, 45, 29);
 				pnlPostulacion.add(radioButton);
 			}
 			{
 				JRadioButton radioButton = new JRadioButton("No");
 				radioButton.setSelected(true);
 				radioButton.setBackground(Color.WHITE);
-				radioButton.setBounds(156, 128, 54, 29);
+				radioButton.setBounds(174, 128, 54, 29);
 				pnlPostulacion.add(radioButton);
 			}
 			{
 				JLabel lblSalarioEsperado = new JLabel("Salario Esperado: $RD");
-				lblSalarioEsperado.setBounds(15, 174, 133, 20);
+				lblSalarioEsperado.setBounds(15, 175, 133, 20);
 				pnlPostulacion.add(lblSalarioEsperado);
 			}
 			
 			JSpinner spinner = new JSpinner();
 			spinner.setModel(new SpinnerNumberModel(new Float(5000), new Float(0), null, new Float(1)));
-			spinner.setBounds(147, 173, 96, 26);
+			spinner.setBounds(149, 173, 96, 22);
 			pnlPostulacion.add(spinner);
 			
 			JLabel lblAosEsperiencia = new JLabel("A\u00F1os Esperiencia:");
-			lblAosEsperiencia.setBounds(274, 171, 133, 20);
+			lblAosEsperiencia.setBounds(274, 173, 133, 20);
 			pnlPostulacion.add(lblAosEsperiencia);
 			
 			JSpinner spinner_1 = new JSpinner();
 			spinner_1.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
-			spinner_1.setBounds(384, 171, 96, 26);
+			spinner_1.setBounds(384, 175, 96, 20);
 			pnlPostulacion.add(spinner_1);
 		}
 		{

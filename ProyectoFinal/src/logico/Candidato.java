@@ -1,5 +1,7 @@
 package logico;
 
+import java.util.ArrayList;
+
 public abstract class Candidato {
 	protected String cedula;
 	protected String nombre;
@@ -10,6 +12,8 @@ public abstract class Candidato {
 	protected String correo;
 	protected String telefono;
 	protected String genero;
+	protected ArrayList<Postulacion> susPostulaciones;
+	/*
 	protected String jordanaDeseada; //Si tiempo parcial o tiempo completo
 	protected String modalidadEmpleo; //Si remota, presencial o híbrido
 	protected boolean vehiculoPropio;
@@ -17,11 +21,10 @@ public abstract class Candidato {
 	protected float salarioEsperado;
 	protected int aniosExperiencia;
 	protected boolean estadoContratado; //Por si ya ha sido contratado, se inhabilita este candidato para futuras vacantes
+	*/
 	
 	public Candidato(String cedula, String nombre, String apellido, String pais, String provincia, String direccion,
-			String correo, String telefono, String genero, String jordanaDeseada, String modalidadEmpleo,
-			boolean vehiculoPropio, boolean puedeMudarse, float salarioEsperado, int aniosExperiencia,
-			boolean estadoContratado) {
+			String correo, String telefono, String genero) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -32,13 +35,7 @@ public abstract class Candidato {
 		this.correo = correo;
 		this.telefono = telefono;
 		this.genero = genero;
-		this.jordanaDeseada = jordanaDeseada;
-		this.modalidadEmpleo = modalidadEmpleo;
-		this.vehiculoPropio = vehiculoPropio;
-		this.puedeMudarse = puedeMudarse;
-		this.salarioEsperado = salarioEsperado;
-		this.aniosExperiencia = aniosExperiencia;
-		this.estadoContratado = estadoContratado;
+		this.susPostulaciones = new ArrayList<Postulacion>();
 	}
 
 	public String getCedula() {
@@ -113,59 +110,11 @@ public abstract class Candidato {
 		this.genero = genero;
 	}
 
-	public String getJordanaDeseada() {
-		return jordanaDeseada;
+	public ArrayList<Postulacion> getSusPostulaciones() {
+		return susPostulaciones;
 	}
 
-	public void setJordanaDeseada(String jordanaDeseada) {
-		this.jordanaDeseada = jordanaDeseada;
-	}
-
-	public String getModalidadEmpleo() {
-		return modalidadEmpleo;
-	}
-
-	public void setModalidadEmpleo(String modalidadEmpleo) {
-		this.modalidadEmpleo = modalidadEmpleo;
-	}
-
-	public boolean isVehiculoPropio() {
-		return vehiculoPropio;
-	}
-
-	public void setVehiculoPropio(boolean vehiculoPropio) {
-		this.vehiculoPropio = vehiculoPropio;
-	}
-
-	public boolean isPuedeMudarse() {
-		return puedeMudarse;
-	}
-
-	public void setPuedeMudarse(boolean puedeMudarse) {
-		this.puedeMudarse = puedeMudarse;
-	}
-
-	public float getSalarioEsperado() {
-		return salarioEsperado;
-	}
-
-	public void setSalarioEsperado(float salarioEsperado) {
-		this.salarioEsperado = salarioEsperado;
-	}
-
-	public int getAniosExperiencia() {
-		return aniosExperiencia;
-	}
-
-	public void setAniosExperiencia(int aniosExperiencia) {
-		this.aniosExperiencia = aniosExperiencia;
-	}
-
-	public boolean isEstadoContratado() {
-		return estadoContratado;
-	}
-
-	public void setEstadoContratado(boolean estadoContratado) {
-		this.estadoContratado = estadoContratado;
+	public void setSusPostulaciones(ArrayList<Postulacion> susPostulaciones) {
+		this.susPostulaciones = susPostulaciones;
 	}
 }

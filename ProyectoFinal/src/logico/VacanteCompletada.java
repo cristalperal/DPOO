@@ -3,15 +3,25 @@ package logico;
 import java.util.Date;
 
 public class VacanteCompletada {
+	private String idVacanteCompletada;
 	private Date fechaContratacion;
-	private Candidato candidatoElegido;
+	private Postulacion postulacionElegida;
 	private Vacante vacanteElegida;
 	
-	public VacanteCompletada(Date fechaContratacion, Candidato candidatoElegido, Vacante vacanteElegida) {
+	public VacanteCompletada(String idVacanteCompletada, Date fechaContratacion, Postulacion postulacionElegida, Vacante vacanteElegida) {
 		super();
+		this.idVacanteCompletada = idVacanteCompletada;
 		this.fechaContratacion = fechaContratacion;
-		this.candidatoElegido = candidatoElegido;
+		this.postulacionElegida = postulacionElegida;
 		this.vacanteElegida = vacanteElegida;
+	}
+
+	public String getIdVacanteCompletada() {
+		return idVacanteCompletada;
+	}
+
+	public void setIdVacanteCompletada(String idVacanteCompletada) {
+		this.idVacanteCompletada = idVacanteCompletada;
 	}
 
 	public Date getFechaContratacion() {
@@ -22,12 +32,12 @@ public class VacanteCompletada {
 		this.fechaContratacion = fechaContratacion;
 	}
 
-	public Candidato getCandidatoElegido() {
-		return candidatoElegido;
+	public Postulacion getPostulacionElegida() {
+		return postulacionElegida;
 	}
 
-	public void setCandidatoElegido(Candidato candidatoElegido) {
-		this.candidatoElegido = candidatoElegido;
+	public void setPostulacionElegida(Postulacion postulacionElegida) {
+		this.postulacionElegida = postulacionElegida;
 	}
 
 	public Vacante getVacanteElegida() {

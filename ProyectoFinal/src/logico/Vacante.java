@@ -9,30 +9,40 @@ public class Vacante {
 	private String nombrePuesto;
 	private String areaRequerida; //El área del puesto (Si es finanzas, desarrollo, logística...)
 	private String tipoCandidato; //Si para un universitario, técnico u obrero
+	private boolean electricidad;
+	private boolean plomeria;
+	private boolean construccion;
+	private boolean limpieza;
+	private boolean ebanisteria;
+	private boolean mecanica;
 	private int aniosExperienciaRequeridos;
 	private String modalidadPropuesta; //Si remota, presencial o híbrido
 	private String jornadaPropuesta; //Si tiempo parcial o tiempo completo
-	private ArrayList<String> requisitos; //Requisitos a tomar en cuenta con la vacante
-	private ArrayList<String> responsabilidades; //Las responsabilidades que conlleva la vacante
 	private float salarioPropuesto;
 	private int cantPuestosDisp; //Cantidad de este puesto disponibles
 	private boolean estadoVacante; //Si esta disponible o no
 	private Date fechaSolicitudVacante;
 	
 	public Vacante(String idVacante, Empresa empresaEmpleadora, String nombrePuesto, String areaRequerida,
-			String tipoCandidato, int aniosExperienciaRequeridos, String modalidadPropuesta, String jornadaPropuesta, 
-			float salarioPropuesto, int cantPuestosDisp, boolean estadoVacante, Date fechaSolicitudVacante) {
+			String tipoCandidato, boolean electricidad, boolean plomeria, boolean construccion, boolean limpieza,
+			boolean ebanisteria, boolean mecanica, int aniosExperienciaRequeridos, String modalidadPropuesta,
+			String jornadaPropuesta, float salarioPropuesto, int cantPuestosDisp, boolean estadoVacante,
+			Date fechaSolicitudVacante) {
 		super();
 		this.idVacante = idVacante;
 		this.empresaEmpleadora = empresaEmpleadora;
 		this.nombrePuesto = nombrePuesto;
 		this.areaRequerida = areaRequerida;
 		this.tipoCandidato = tipoCandidato;
+		this.electricidad = electricidad;
+		this.plomeria = plomeria;
+		this.construccion = construccion;
+		this.limpieza = limpieza;
+		this.ebanisteria = ebanisteria;
+		this.mecanica = mecanica;
 		this.aniosExperienciaRequeridos = aniosExperienciaRequeridos;
 		this.modalidadPropuesta = modalidadPropuesta;
 		this.jornadaPropuesta = jornadaPropuesta;
-		this.requisitos = new ArrayList<String>();
-		this.responsabilidades = new ArrayList<String>();
 		this.salarioPropuesto = salarioPropuesto;
 		this.cantPuestosDisp = cantPuestosDisp;
 		this.estadoVacante = estadoVacante;
@@ -79,6 +89,54 @@ public class Vacante {
 		this.tipoCandidato = tipoCandidato;
 	}
 
+	public boolean isElectricidad() {
+		return electricidad;
+	}
+
+	public void setElectricidad(boolean electricidad) {
+		this.electricidad = electricidad;
+	}
+
+	public boolean isPlomeria() {
+		return plomeria;
+	}
+
+	public void setPlomeria(boolean plomeria) {
+		this.plomeria = plomeria;
+	}
+
+	public boolean isConstruccion() {
+		return construccion;
+	}
+
+	public void setConstruccion(boolean construccion) {
+		this.construccion = construccion;
+	}
+
+	public boolean isLimpieza() {
+		return limpieza;
+	}
+
+	public void setLimpieza(boolean limpieza) {
+		this.limpieza = limpieza;
+	}
+
+	public boolean isEbanisteria() {
+		return ebanisteria;
+	}
+
+	public void setEbanisteria(boolean ebanisteria) {
+		this.ebanisteria = ebanisteria;
+	}
+
+	public boolean isMecanica() {
+		return mecanica;
+	}
+
+	public void setMecanica(boolean mecanica) {
+		this.mecanica = mecanica;
+	}
+
 	public int getAniosExperienciaRequeridos() {
 		return aniosExperienciaRequeridos;
 	}
@@ -101,22 +159,6 @@ public class Vacante {
 
 	public void setJornadaPropuesta(String jornadaPropuesta) {
 		this.jornadaPropuesta = jornadaPropuesta;
-	}
-
-	public ArrayList<String> getRequisitos() {
-		return requisitos;
-	}
-
-	public void setRequisitos(ArrayList<String> requisitos) {
-		this.requisitos = requisitos;
-	}
-
-	public ArrayList<String> getResponsabilidades() {
-		return responsabilidades;
-	}
-
-	public void setResponsabilidades(ArrayList<String> responsabilidades) {
-		this.responsabilidades = responsabilidades;
 	}
 
 	public float getSalarioPropuesto() {
@@ -149,5 +191,5 @@ public class Vacante {
 
 	public void setFechaSolicitudVacante(Date fechaSolicitudVacante) {
 		this.fechaSolicitudVacante = fechaSolicitudVacante;
-	} 
+	}
 }

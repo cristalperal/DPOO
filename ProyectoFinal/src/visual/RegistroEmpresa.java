@@ -134,11 +134,11 @@ public class RegistroEmpresa extends JDialog {
 			txtCorreo.setColumns(10);
 			
 			JLabel lblTelefono = new JLabel("Tel\u00E9fono:");
-			lblTelefono.setBounds(330, 31, 56, 16);
+			lblTelefono.setBounds(322, 31, 56, 16);
 			pnlContactos.add(lblTelefono);
 			
 			txtTelefono = new JTextField();
-			txtTelefono.setBounds(401, 27, 174, 22);
+			txtTelefono.setBounds(391, 27, 174, 22);
 			pnlContactos.add(txtTelefono);
 			txtTelefono.setColumns(10);
 		}

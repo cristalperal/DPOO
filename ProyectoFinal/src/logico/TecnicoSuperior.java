@@ -4,11 +4,8 @@ public class TecnicoSuperior extends Candidato {
 	private String areaCursada;
 
 	public TecnicoSuperior(String cedula, String nombre, String apellido, String pais, String provincia,
-			String direccion, String correo, String telefono, String genero, String jordanaDeseada,
-			String modalidadEmpleo, boolean vehiculoPropio, boolean puedeMudarse, float salarioEsperado,
-			int aniosExperiencia, boolean estadoContratado, String areaCursada) {
-		super(cedula, nombre, apellido, pais, provincia, direccion, correo, telefono, genero, jordanaDeseada,
-				modalidadEmpleo, vehiculoPropio, puedeMudarse, salarioEsperado, aniosExperiencia, estadoContratado);
+			String direccion, String correo, String telefono, String genero, String areaCursada) {
+		super(cedula, nombre, apellido, pais, provincia, direccion, correo, telefono, genero);
 		this.areaCursada = areaCursada;
 	}
 
