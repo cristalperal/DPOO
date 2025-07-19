@@ -22,6 +22,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.JCheckBox;
 
 public class RegistroCandidato extends JDialog {
 
@@ -34,6 +35,27 @@ public class RegistroCandidato extends JDialog {
 	private JTextField txtDireccion;
 	private JTextField txtTelefono;
 	private JTextField txtCorreo;
+	private JTextField txtCarreraCursada;
+	private JTextField txtAreaCursada;
+	private JLabel lblCarreraCursada;
+	private JLabel lblreaCursada;
+	private JCheckBox chckbxElectricidad;
+	private JCheckBox chckbxPlomeria;
+	private JCheckBox chckbxConstruccin;
+	private JCheckBox chckbxLimpieza;
+	private JCheckBox chckbxConstruccion;
+	private JCheckBox chckbxEbanisteria;
+	private JCheckBox chckbxMecanica;
+	private JCheckBox chckbxJardineria;
+	private JCheckBox chckbxMantenimiento;
+	private JRadioButton rdbtnTcnicoSuperior;
+	private JRadioButton rdbtnObrero;
+	private JPanel pnlInformacionGeneral;
+	private JPanel pnlInformacionContacto;
+	private JPanel panelUniversitario;
+	private JPanel panelTecnico;
+	private JPanel panelObrero;
+	private JRadioButton rdbtnUniversitario;
 
 	/**
 	 * Launch the application.
@@ -54,7 +76,7 @@ public class RegistroCandidato extends JDialog {
 	public RegistroCandidato() {
 		setTitle("Registrar Candidato");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(RegistroCandidato.class.getResource("/imagenes/Logo.png")));
-		setBounds(100, 100, 1120, 722);
+		setBounds(100, 100, 908, 838);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(0, 51, 102));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -64,42 +86,78 @@ public class RegistroCandidato extends JDialog {
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
 			JPanel pnlGeneral = new JPanel();
-			pnlGeneral.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			pnlGeneral.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Registro de candidato", TitledBorder.LEFT, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			pnlGeneral.setBackground(new Color(255, 255, 255));
 			contentPanel.add(pnlGeneral, BorderLayout.CENTER);
 			pnlGeneral.setLayout(null);
 			{
 				JPanel pnlTipoCandidato = new JPanel();
 				pnlTipoCandidato.setLayout(null);
-				pnlTipoCandidato.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Elegir tipo de candidato", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+				pnlTipoCandidato.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Elegir nivel educativo", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				pnlTipoCandidato.setBackground(new Color(255, 255, 255));
-				pnlTipoCandidato.setBounds(4, 19, 1083, 51);
+				pnlTipoCandidato.setBounds(6, 32, 868, 51);
 				pnlGeneral.add(pnlTipoCandidato);
 				{
-					JRadioButton rdbtnUniversitario = new JRadioButton("Universitario");
+					rdbtnUniversitario = new JRadioButton("Universitario");
+					rdbtnUniversitario.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+						rdbtnUniversitario.setSelected(true);
+						rdbtnTcnicoSuperior.setSelected(false);	
+				     	rdbtnObrero.setSelected(false);	     	
+				     	panelUniversitario.setVisible(true);
+				     	panelTecnico.setVisible(false);
+				     	panelObrero.setVisible(false);
+				     	
+				     	
+							
+						}
+					});
 					rdbtnUniversitario.setSelected(true);
 					rdbtnUniversitario.setBackground(new Color(255, 255, 255));
 					rdbtnUniversitario.setBounds(55, 18, 121, 23);
 					pnlTipoCandidato.add(rdbtnUniversitario);
 				}
 				{
-					JRadioButton rdbtnTcnicoSuperior = new JRadioButton("T\u00E9cnico Superior");
+					rdbtnTcnicoSuperior = new JRadioButton("T\u00E9cnico Superior");
+					rdbtnTcnicoSuperior.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							rdbtnUniversitario.setSelected(false);
+							rdbtnTcnicoSuperior.setSelected(true);	
+					     	rdbtnObrero.setSelected(false);
+					     	panelUniversitario.setVisible(false);
+					     	panelTecnico.setVisible(true);
+					     	panelObrero.setVisible(false);
+						}
+					});
 					rdbtnTcnicoSuperior.setBackground(new Color(255, 255, 255));
 					rdbtnTcnicoSuperior.setBounds(200, 18, 156, 23);
 					pnlTipoCandidato.add(rdbtnTcnicoSuperior);
 				}
 				{
-					JRadioButton rdbtnObrero = new JRadioButton("Obrero");
+					rdbtnObrero = new JRadioButton("Obrero");
+					rdbtnObrero.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							rdbtnUniversitario.setSelected(false);
+							rdbtnTcnicoSuperior.setSelected(false);	
+					     	rdbtnObrero.setSelected(true);				     	
+					     	panelUniversitario.setVisible(false);
+					     	panelTecnico.setVisible(false);
+					     	panelObrero.setVisible(true);
+						}
+					});
 					rdbtnObrero.setBackground(new Color(255, 255, 255));
 					rdbtnObrero.setBounds(374, 17, 76, 23);
 					pnlTipoCandidato.add(rdbtnObrero);
 				}
 			}
 			{
-				JPanel pnlInformacionGeneral = new JPanel();
+				pnlInformacionGeneral = new JPanel();
 				pnlInformacionGeneral.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n General", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				pnlInformacionGeneral.setBackground(new Color(255, 255, 255));
-				pnlInformacionGeneral.setBounds(4, 86, 1083, 185);
+				pnlInformacionGeneral.setBounds(6, 99, 868, 185);
 				pnlGeneral.add(pnlInformacionGeneral);
 				pnlInformacionGeneral.setLayout(null);
 				{
@@ -181,10 +239,10 @@ public class RegistroCandidato extends JDialog {
 				pnlInformacionGeneral.add(comboBox);
 			}
 			{
-				JPanel pnlInformacionContacto = new JPanel();
+				pnlInformacionContacto = new JPanel();
 				pnlInformacionContacto.setBorder(new TitledBorder(null, "Informaci\u00F3n Contacto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				pnlInformacionContacto.setBackground(new Color(255, 255, 255));
-				pnlInformacionContacto.setBounds(4, 283, 1083, 92);
+				pnlInformacionContacto.setBounds(6, 296, 868, 92);
 				pnlGeneral.add(pnlInformacionContacto);
 				pnlInformacionContacto.setLayout(null);
 				{
@@ -210,98 +268,108 @@ public class RegistroCandidato extends JDialog {
 					txtCorreo.setColumns(10);
 				}
 			}
-			
-			JPanel pnlPostulacion = new JPanel();
-			pnlPostulacion.setLayout(null);
-			pnlPostulacion.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Postulaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-			pnlPostulacion.setBackground(Color.WHITE);
-			pnlPostulacion.setBounds(4, 391, 1083, 242);
-			pnlGeneral.add(pnlPostulacion);
-			
-			JLabel lblJornada = new JLabel("Jornada:");
-			lblJornada.setBounds(15, 40, 63, 20);
-			pnlPostulacion.add(lblJornada);
-			
-			JComboBox comboBox = new JComboBox();
-			comboBox.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Tiempo Completo", "Tiempo Parcial"}));
-			comboBox.setBackground(Color.WHITE);
-			comboBox.setBounds(81, 37, 174, 26);
-			pnlPostulacion.add(comboBox);
-			
-			JLabel lblModalidad = new JLabel("Modalidad:");
-			lblModalidad.setBounds(294, 40, 63, 20);
-			pnlPostulacion.add(lblModalidad);
-			
-			JComboBox comboBox_1 = new JComboBox();
-			comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Presencial", "Remoto", "H\u00EDbrido"}));
-			comboBox_1.setBackground(Color.WHITE);
-			comboBox_1.setBounds(363, 37, 174, 26);
-			pnlPostulacion.add(comboBox_1);
-			
-			JLabel lblAreaDeseada = new JLabel("\u00C1rea Deseada:");
-			lblAreaDeseada.setBounds(586, 41, 108, 20);
-			pnlPostulacion.add(lblAreaDeseada);
-			
-			JComboBox comboBox_2 = new JComboBox();
-			comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Administraci\u00F3n", "Contabilidad", "Recursos Humanos", "Tecnolog\u00EDa", "Dise\u00F1o", "Ingenier\u00EDa", "Ventas", "Marketing", "Atenci\u00F3n", "Educaci\u00F3n", "Salud", "Psicolog\u00EDa", "Log\u00EDstica", "Producci\u00F3n", "Construcci\u00F3n", "Servicios", "Gastronom\u00EDa", "Seguridad", "Legal", "Investigaci\u00F3n", "Arte", "Turismo", "Transporte", "Telecomunicaciones", "Agropecuaria"}));
-			comboBox_2.setMaximumRowCount(20);
-			comboBox_2.setBackground(Color.WHITE);
-			comboBox_2.setBounds(684, 39, 174, 26);
-			pnlPostulacion.add(comboBox_2);
-			
-			JLabel lblVehiculoPropio = new JLabel("\u00BFVeh\u00EDculo Propio?");
-			lblVehiculoPropio.setBounds(15, 95, 117, 20);
-			pnlPostulacion.add(lblVehiculoPropio);
 			{
-				JRadioButton radioButton = new JRadioButton("Si");
-				radioButton.setBackground(new Color(255, 255, 255));
-				radioButton.setBounds(128, 90, 45, 29);
-				pnlPostulacion.add(radioButton);
+				panelUniversitario = new JPanel();
+				panelUniversitario.setLayout(null);
+				panelUniversitario.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Profesional", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+				panelUniversitario.setBackground(Color.WHITE);
+				panelUniversitario.setBounds(6, 392, 868, 105);
+				pnlGeneral.add(panelUniversitario);
+				{
+					lblCarreraCursada = new JLabel("Carrera Cursada:");
+					lblCarreraCursada.setBounds(15, 41, 120, 20);
+					panelUniversitario.add(lblCarreraCursada);
+				}
+				{
+					txtCarreraCursada = new JTextField();
+					txtCarreraCursada.setColumns(10);
+					txtCarreraCursada.setBounds(127, 40, 174, 22);
+					panelUniversitario.add(txtCarreraCursada);
+				}
 			}
 			{
-				JRadioButton radioButton = new JRadioButton("No");
-				radioButton.setBackground(new Color(255, 255, 255));
-				radioButton.setSelected(true);
-				radioButton.setBounds(174, 91, 54, 29);
-				pnlPostulacion.add(radioButton);
+				panelObrero = new JPanel();
+				panelObrero.setLayout(null);
+				panelObrero.setVisible(false);
+				panelObrero.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Profesional", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+				panelObrero.setBackground(Color.WHITE);
+				panelObrero.setBounds(6, 598, 868, 123);
+				pnlGeneral.add(panelObrero);
+				{
+					JLabel lblNewLabel = new JLabel("Seleccione sus habilidades");
+					lblNewLabel.setBounds(9, 19, 211, 20);
+					panelObrero.add(lblNewLabel);
+				}
+				
+				chckbxElectricidad = new JCheckBox("Electricidad");
+				chckbxElectricidad.setBackground(new Color(255, 255, 255));
+				chckbxElectricidad.setBounds(10, 46, 119, 29);
+				panelObrero.add(chckbxElectricidad);
+				
+				chckbxPlomeria = new JCheckBox("Plomer\u00EDa");
+				chckbxPlomeria.setBackground(Color.WHITE);
+				chckbxPlomeria.setBounds(135, 46, 101, 29);
+				panelObrero.add(chckbxPlomeria);
+				
+				chckbxConstruccin = new JCheckBox("Construcci\u00F3n");
+				chckbxConstruccin.setBackground(Color.WHITE);
+				chckbxConstruccin.setBounds(244, 46, 123, 29);
+				panelObrero.add(chckbxConstruccin);
+				
+				chckbxLimpieza = new JCheckBox("Limpieza");
+				chckbxLimpieza.setBackground(Color.WHITE);
+				chckbxLimpieza.setBounds(374, 46, 101, 29);
+				panelObrero.add(chckbxLimpieza);
+				
+				chckbxConstruccion = new JCheckBox("Construcci\u00F3n");
+				chckbxConstruccion.setBackground(Color.WHITE);
+				chckbxConstruccion.setBounds(474, 46, 123, 29);
+				panelObrero.add(chckbxConstruccion);
+				{
+					chckbxEbanisteria = new JCheckBox("Ebanister\u00EDa");
+					chckbxEbanisteria.setBackground(Color.WHITE);
+					chckbxEbanisteria.setBounds(600, 46, 123, 29);
+					panelObrero.add(chckbxEbanisteria);
+				}
+				{
+					chckbxMecanica = new JCheckBox("Mec\u00E1nica");
+					chckbxMecanica.setBackground(Color.WHITE);
+					chckbxMecanica.setBounds(9, 83, 101, 29);
+					panelObrero.add(chckbxMecanica);
+				}
+				{
+					chckbxJardineria = new JCheckBox("Jardiner\u00EDa");
+					chckbxJardineria.setBackground(Color.WHITE);
+					chckbxJardineria.setBounds(135, 83, 101, 29);
+					panelObrero.add(chckbxJardineria);
+				}
+				{
+					chckbxMantenimiento = new JCheckBox("Mantenimiento");
+					chckbxMantenimiento.setBackground(Color.WHITE);
+					chckbxMantenimiento.setBounds(244, 83, 119, 29);
+					panelObrero.add(chckbxMantenimiento);
+				}
 			}
 			{
-				JLabel lblPuedeMudarse = new JLabel("\u00BFPuede Mudarse?");
-				lblPuedeMudarse.setBounds(15, 132, 117, 20);
-				pnlPostulacion.add(lblPuedeMudarse);
+				panelTecnico = new JPanel();
+				panelTecnico.setBounds(6, 495, 868, 98);
+				pnlGeneral.add(panelTecnico);
+				panelTecnico.setLayout(null);
+				panelTecnico.setVisible(false);
+				panelTecnico.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Profesional", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+				panelTecnico.setBackground(Color.WHITE);
+				{
+					lblreaCursada = new JLabel("\u00C1rea Cursada:");
+					lblreaCursada.setBounds(15, 41, 109, 20);
+					panelTecnico.add(lblreaCursada);
+				}
+				{
+					txtAreaCursada = new JTextField();
+					txtAreaCursada.setColumns(10);
+					txtAreaCursada.setBounds(107, 40, 174, 22);
+					panelTecnico.add(txtAreaCursada);
+				}
 			}
-			{
-				JRadioButton radioButton = new JRadioButton("Si");
-				radioButton.setBackground(Color.WHITE);
-				radioButton.setBounds(128, 127, 45, 29);
-				pnlPostulacion.add(radioButton);
-			}
-			{
-				JRadioButton radioButton = new JRadioButton("No");
-				radioButton.setSelected(true);
-				radioButton.setBackground(Color.WHITE);
-				radioButton.setBounds(174, 128, 54, 29);
-				pnlPostulacion.add(radioButton);
-			}
-			{
-				JLabel lblSalarioEsperado = new JLabel("Salario Esperado: $RD");
-				lblSalarioEsperado.setBounds(15, 175, 133, 20);
-				pnlPostulacion.add(lblSalarioEsperado);
-			}
-			
-			JSpinner spinner = new JSpinner();
-			spinner.setModel(new SpinnerNumberModel(new Float(5000), new Float(0), null, new Float(1)));
-			spinner.setBounds(149, 173, 96, 22);
-			pnlPostulacion.add(spinner);
-			
-			JLabel lblAosEsperiencia = new JLabel("A\u00F1os Esperiencia:");
-			lblAosEsperiencia.setBounds(274, 173, 133, 20);
-			pnlPostulacion.add(lblAosEsperiencia);
-			
-			JSpinner spinner_1 = new JSpinner();
-			spinner_1.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
-			spinner_1.setBounds(384, 175, 96, 20);
-			pnlPostulacion.add(spinner_1);
 		}
 		{
 			JPanel buttonPane = new JPanel();

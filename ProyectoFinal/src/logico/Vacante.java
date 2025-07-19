@@ -1,6 +1,6 @@
 package logico;
 
-import java.util.ArrayList;
+
 import java.util.Date;
 
 public class Vacante {

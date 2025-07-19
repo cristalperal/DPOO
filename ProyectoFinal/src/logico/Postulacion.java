@@ -6,7 +6,7 @@ public class Postulacion {
 	private String idPostulacion;
 	private Candidato elCandidato;
 	private Date fechaPostulacion;
-	private boolean estadoPostulacion; //Si es aceptada o pendiente
+	private String estadoPostulacion; //pendiente, pausada, aceptada
 	protected String jordanaDeseada; //Si tiempo parcial o tiempo completo
 	protected String modalidadEmpleo; //Si remota, presencial o híbrido
 	protected boolean vehiculoPropio;
@@ -14,14 +14,14 @@ public class Postulacion {
 	protected float salarioEsperado;
 	protected int aniosExperiencia;
 	
-	public Postulacion(String idPostulacion, Candidato elCandidato, Date fechaPostulacion, boolean estadoPostulacion,
+	public Postulacion(String idPostulacion, Candidato elCandidato, Date fechaPostulacion, String estadoPostulacion,
 			String jordanaDeseada, String modalidadEmpleo, boolean vehiculoPropio, boolean puedeMudarse,
 			float salarioEsperado, int aniosExperiencia) {
 		super();
 		this.idPostulacion = idPostulacion;
 		this.elCandidato = elCandidato;
 		this.fechaPostulacion = fechaPostulacion;
-		this.estadoPostulacion = estadoPostulacion;
+		this.estadoPostulacion = "pendiente";
 		this.jordanaDeseada = jordanaDeseada;
 		this.modalidadEmpleo = modalidadEmpleo;
 		this.vehiculoPropio = vehiculoPropio;
@@ -54,11 +54,11 @@ public class Postulacion {
 		this.fechaPostulacion = fechaPostulacion;
 	}
 
-	public boolean isEstadoPostulacion() {
+	public String isEstadoPostulacion() {
 		return estadoPostulacion;
 	}
 
-	public void setEstadoPostulacion(boolean estadoPostulacion) {
+	public void setEstadoPostulacion(String estadoPostulacion) {
 		this.estadoPostulacion = estadoPostulacion;
 	}
 
